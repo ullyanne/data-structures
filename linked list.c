@@ -71,6 +71,21 @@ void print(struct node* head)
     }
 }
 
+struct node* reverse(struct node* prev, struct node* current)
+{
+    struct node* next;
+
+    if(current == NULL)
+        return prev;
+    
+    next = current->next;
+    current->next = prev;
+    prev = current;
+    current = next;
+
+    return reverse(prev, current);
+}
+
 void swap(struct node* x, struct node* y)
 {
     int item;
