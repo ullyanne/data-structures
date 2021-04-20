@@ -65,7 +65,7 @@ void enqueueP(struct queueP** queue, int item, int priority)
     current->next = newnode;
 }
 
-struct nodeP* dequeue(struct queueP** queue)
+struct nodeP* dequeueP(struct queueP** queue)
 {
     if(isEmptyP(*queue))
         printf("Queue underflow.\n");
