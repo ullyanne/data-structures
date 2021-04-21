@@ -99,4 +99,6 @@ int main()
     struct queueP* queueP = createqueueP();
     
     free(queueP);
+
+    return 0;
 }

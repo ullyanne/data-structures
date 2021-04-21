@@ -96,4 +96,6 @@ int main()
     struct stack* stack = createStack();
     
     free(stack);
+
+    return 0;
 }

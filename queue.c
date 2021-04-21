@@ -90,4 +90,6 @@ int main()
     struct queue* queue = createQueue();
 
     free(queue);
+
+    return 0;
 }
