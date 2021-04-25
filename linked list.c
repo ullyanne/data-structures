@@ -57,6 +57,31 @@ void addEnd_tail(struct node** head, struct node** tail, int item)
     *tail = newnode;
 }
 
+void remove(struct node** head, int item)
+{
+    struct node* current = *head;
+    struct node* prev = NULL;
+
+    while(current != NULL && current->item != item)
+    {
+        prev = current;
+        current = current->next;
+    }
+
+    if(current == NULL)
+    {
+        printf("Can't find the desired node to remove.\n");
+        return;
+    }
+
+    if(prev == NULL)
+        *head = current->next;
+    else
+        prev->next = current->next;
+
+    free(current);
+}
+
 void print(struct node* head)
 {
     struct node* ptr = head;
