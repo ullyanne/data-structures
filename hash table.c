@@ -10,13 +10,15 @@ struct hashNode
 
 struct hashtable
 {
-    struct hashNode* ht[13];
+    struct hashNode** ht;
     int size;
 };
 
 struct hashtable* createHashtable(int size)
 {
     struct hashtable* hashTable = (struct hashtable*) malloc(sizeof(struct hashtable));
+    
+    hashTable->ht = (struct hashNode**) malloc(size * sizeof(struct hashNode*));
     hashTable->size = size;
 
     for(int i = 0; i < size; i++)
@@ -135,6 +137,8 @@ int main()
 {
     int size = 13;
     struct hashtable* ht = createHashtable(size);
+
+    free(ht);
 
     return 0;
 }
